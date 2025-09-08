@@ -22,102 +22,103 @@ export const navLinks = [
 ];
 
 export const clientReviews = [
-    {
-        id: 1,
-        name: 'Emily Johnson',
-        position: 'Marketing Director at GreenLeaf',
-        img: 'assets/review1.png',
-        review:
-            'Disclaimer: This review is for testing purposes. Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
-    },
-    {
-        id: 2,
-        name: 'Mark Rogers',
-        position: 'Founder of TechGear Shop',
-        img: 'assets/review2.png',
-        review:
-            'Disclaimer: This review is for testing purposes. Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
-    },
-    {
-        id: 3,
-        name: 'John Dohsas',
-        position: 'Project Manager at UrbanTech',
-        img: 'assets/review3.png',
-        review:
-            'Disclaimer: This review is for testing purposes. I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
-    },
-    {
-        id: 4,
-        name: 'Ether Smith',
-        position: 'CEO of BrightStar Enterprises',
-        img: 'assets/review4.png',
-        review:
-            'Disclaimer: This review is for testing purposes. Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend development are top-notch.',
-    },
+  {
+    id: 1,
+    name: 'Andrei Munteanu',
+    position: 'Team Lead at BitSense',
+    img: 'assets/no-img.png',
+    review:
+      'Bogdan proved to be a reliable full-stack developer. He handled both frontend and backend tasks with ease, and the IoT dashboard he built helped us monitor devices in real time. His ability to deliver under pressure really stood out.',
+  },
+  {
+    id: 2,
+    name: 'Raluca Iordache',
+    position: 'Project Manager at Mensis Agency',
+    img: 'assets/no-img.png',
+    review:
+      'Working with Bogdan was smooth from day one. He developed several React components for client campaigns, always meeting deadlines and maintaining great communication. The landing pages he optimized scored much higher on SEO after launch.',
+  },
+  {
+    id: 3,
+    name: 'Romeghea Andrei',
+    position: 'Freelance Client — Mobile App',
+    img: 'assets/no-img.png',
+    review:
+      'Bogdan created a clean and functional React Native app for our small business. He guided us through the technical decisions, implemented authentication and cloud storage, and the end product exceeded our expectations.',
+  },
+  {
+  id: 4,
+  name: 'Cristina Șerban',
+  position: 'Professor at University Ovidius Constanta',
+  img: 'assets/no-img.png',
+  review:
+    'I had the opportunity to supervise Bogdan during his academic projects, and I was impressed by his curiosity and ability to quickly grasp complex concepts. He consistently delivered well-structured, functional applications and demonstrated strong teamwork skills. His passion for software development is evident, and I am confident he will excel in any professional environment.',
+  },
 ];
 
 export const myProjects = [
-    {
-        title: 'Review App cu QR',
-        desc: 'O aplicație web care permite utilizatorilor să lase recenzii verificate folosind coduri QR și geolocalizare.',
-        subdesc:
-            'Include integrare cu Google Maps pentru navigare și autentificarea locației. Tech Stack: Vue 3 (Vuetify), Node.js (Express), Google Maps API.',
-        href: 'https://github.com/NeacsuBogdan/review-qr-app',
-        texture: '/textures/project/project1.mp4',
-        logo: '/assets/project-logo1.png',
-        logoStyle: {
-            backgroundColor: '#1E1E1E',
-            border: '0.2px solid #999',
-            boxShadow: '0px 0px 60px 0px #FF45004D',
-        },
-        spotlight: '/assets/spotlight1.png',
-        tags: [
-            { id: 1, name: 'Vue 3', path: '/assets/vue.png' },
-            { id: 2, name: 'Node.js', path: '/assets/node.png' },
-            { id: 3, name: 'Google Maps API', path: '/assets/maps.png' },
-        ],
+  {
+    title: 'QR Review App',
+    desc: 'A web app that lets users leave verified reviews using QR codes and geolocation.',
+    subdesc:
+      'Includes Google Maps integration for navigation and location verification. Tech stack: Vue 3 (Vuetify), Node.js (Express), Google Maps API.',
+    href: 'https://github.com/NeacsuBogdan/tellthetruth-frontend',
+    texture: '/textures/project/3d-portofolio.mp4',
+    logo: '/assets/project-logo1.png',
+    logoStyle: {
+      backgroundColor: '#1E1E1E',
+      border: '0.2px solid #999',
+      boxShadow: '0px 0px 60px 0px #FF45004D',
     },
-    {
-        title: 'AORA – AI Video Sharing App',
-        desc: 'Aplicație mobilă pentru încărcarea și explorarea de videoclipuri generate cu AI, cu partajare de prompturi.',
-        subdesc:
-            'Include autentificare, stocare cloud și interfață adaptabilă. Tech Stack: React Native, Expo Router, Appwrite, Tailwind CSS, Expo Media Library.',
-        href: 'https://github.com/NeacsuBogdan/Aora',
-        texture: '/textures/project/project2.mp4',
-        logo: '/assets/project-logo2.png',
-        logoStyle: {
-            backgroundColor: '#1E1E1E',
-            border: '0.2px solid #3A3A3A',
-            boxShadow: '0px 0px 60px 0px #00A3FF4D',
-        },
-        spotlight: '/assets/spotlight2.png',
-        tags: [
-            { id: 1, name: 'React Native', path: '/assets/react.svg' },
-            { id: 2, name: 'Expo', path: '/assets/expo.png' },
-            { id: 3, name: 'Tailwind CSS', path: '/assets/tailwindcss.png' },
-        ],
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      { id: 1, name: 'Vue 3', path: '/assets/vue.png' },
+      { id: 2, name: 'Node.js', path: '/assets/node.png' },
+      { id: 3, name: 'Google Maps API', path: '/assets/maps.png' },
+    ],
+  },
+  {
+    title: 'AORA – AI Video Sharing App',
+    desc: 'Mobile app for uploading and exploring AI-generated videos with prompt sharing.',
+    subdesc:
+      'Includes authentication, cloud storage, and adaptive UI. Tech stack: React Native, Expo Router, Appwrite, Tailwind CSS, Expo Media Library.',
+    href: 'https://github.com/NeacsuBogdan/Aora',
+    texture: '/textures/project/3d-portofolio.mp4',
+    logo: '/assets/project-logo2.png',
+    logoStyle: {
+      backgroundColor: '#1E1E1E',
+      border: '0.2px solid #3A3A3A',
+      boxShadow: '0px 0px 60px 0px #00A3FF4D',
     },
-    {
-        title: 'Portofoliu Interactiv 3D',
-        desc: 'Site portofoliu 3D care evidențiază proiectele într-un mod vizual captivant și interactiv.',
-        subdesc:
-            'Realizat cu Three.js, React Three Fiber, GSAP și EmailJS. Include glob 3D, tranziții animate și layout responsive.',
-        href: 'https://github.com/NeacsuBogdan/threejs_portofolio',
-        texture: '/textures/project/project3.mp4',
-        logo: '/assets/project-logo3.png',
-        logoStyle: {
-            backgroundColor: '#1E1E1E',
-            border: '0.2px solid #333333',
-            boxShadow: '0px 0px 60px 0px #FFD7004D',
-        },
-        spotlight: '/assets/spotlight3.png',
-        tags: [
-            { id: 1, name: 'Three.js', path: '/assets/threejs.png' },
-            { id: 2, name: 'React.js', path: '/assets/react.svg' },
-            { id: 3, name: 'TailwindCSS', path: '/assets/tailwindcss.png' },
-        ],
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      { id: 1, name: 'React Native', path: '/assets/react.svg' },
+      { id: 2, name: 'Expo', path: '/assets/expo.png' },
+      { id: 3, name: 'Tailwind CSS', path: '/assets/tailwindcss.png' },
+    ],
+  },
+  {
+    title: 'Interactive 3D Portfolio',
+    desc: 'A 3D portfolio site showcasing projects in a visually engaging and interactive way.',
+    subdesc:
+      'Built with Three.js, React Three Fiber, GSAP, and EmailJS. Includes a 3D globe, animated transitions, and responsive layout.',
+    href: 'https://github.com/NeacsuBogdan/3d-portofolio',
+    texture: '/textures/project/3d-portofolio.mp4',
+    logo: '/assets/project-logo3.png',
+    logoStyle: {
+      backgroundColor: '#1E1E1E',
+      border: '0.2px solid #333333',
+      boxShadow: '0px 0px 60px 0px #FFD7004D',
     },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      { id: 1, name: 'Three.js', path: '/assets/threejs.png' },
+      { id: 2, name: 'React', path: '/assets/react.svg' },
+      { id: 3, name: 'Tailwind CSS', path: '/assets/tailwindcss.png' },
+    ],
+  },
 ];
+
 
 
 
@@ -131,31 +132,34 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 };
 
 export const workExperiences = [
-    {
-        id: 1,
-        name: 'Cornerstone Technology',
-        pos: 'Frontend Intern',
-        duration: '2023',
-        title: 'Am dezvoltat o aplicație de management al rețetelor folosind Angular și TypeScript, implementând funcționalități CRUD printr-o interfață intuitivă.',
-        icon: '/assets/angular.png',
-        animation: 'looking',
-    },
-    {
-        id: 2,
-        name: 'Cornerstone Technology',
-        pos: 'Backend Intern',
-        duration: '2022',
-        title: 'Am construit logica backend pentru o aplicație de tip rețea socială folosind C# și .NET, concentrându-mă pe interacțiunea utilizatorilor și fluxuri sigure de date.',
-        icon: '/assets/dotnet.png',
-        animation: 'bow',
-    },
-    {
-        id: 3,
-        name: 'Freelance',
-        pos: 'Junior Developer (Proiecte freelance și personale)',
-        duration: '2021 - prezent',
-        title: 'Am dezvoltat aplicații mobile, web și 3D folosind tehnologii moderne precum React Native, Vue, Node.js și Three.js. Am integrat o rețea neuronală (NCF) într-un proiect pentru recomandări personalizate.',
-        icon: '/assets/code.png',
-        animation: 'waving',
-    },
+  {
+    id: 1,
+    name: 'BitSense',
+    pos: 'Full-Stack Software Developer',
+    duration: 'Jun 2024 – 2025',
+    title:
+      'Built an IoT Monitoring Dashboard with real-time updates and device management (React, TypeScript, Node.js/Express, PostgreSQL, WebSockets, Docker). Also created internal automation tools for reports and maintenance (REST APIs, Jest, Azure DevOps).',
+    icon: '/assets/react.png',
+    animation: 'looking',
+  },
+  {
+    id: 2,
+    name: 'Mensis Agency',
+    pos: 'Full-Stack Software Developer',
+    duration: 'Aug 2023 – Jun 2024',
+    title:
+      'Developed custom React components and high-performance landing pages; collaborated closely with design and backend teams. Stack: React, TypeScript, Redux, Tailwind CSS, Node.js (Express), PostgreSQL.',
+    icon: '/assets/tailwindcss.png',
+    animation: 'bow',
+  },
+  {
+    id: 3,
+    name: 'Freelance',
+    pos: 'Developer (personal & freelance projects)',
+    duration: '2021 – Present',
+    title:
+      'Built web/mobile apps and a 3D portfolio site (Three.js/React Three Fiber). Notable projects: AORA (React Native + Expo + Appwrite) and 3D portfolio (React, Three.js, Vite, GSAP, EmailJS).',
+    icon: '/assets/threejs.png',
+    animation: 'waving',
+  },
 ];
