@@ -123,13 +123,43 @@ export const myProjects = [
 
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
+  if (isSmall) {
     return {
-        dijinScale: isSmall ? 0.2 : isMobile ? 0.4 : 0.5,
-        dijinPosition: isMobile ? [0, -1, 0] : [0, -2, 0],
-        cubePosition: isSmall ? [-1, -4, 0] : isMobile ? [0, 2, 0] : isTablet ? [0, 2, 0] : [0, 2, 0],
-        reactLogoPosition: isSmall ? [-1, -4, 0] : isMobile ? [7.5, 13, -25] : isTablet ? [8, 12, -20] : [8, 12, -20],
+      dijinScale: 0.75,
+      dijinPosition: [-0.5, -3.0, 0],
+      reactLogoScale: 0.7,
+      cameraZ: 26,
+      fov: 55,
     };
+  }
+  if (isMobile) {
+    return {
+      dijinScale: 0.9,
+      dijinPosition: [-0.8, -3.0, 0],
+      reactLogoScale: 0.8,
+      cameraZ: 24,
+      fov: 52,
+    };
+  }
+  if (isTablet) {
+    return {
+      dijinScale: 1.0,
+      dijinPosition: [-0.9, -3.2, 0],
+      reactLogoScale: 0.9,
+      cameraZ: 22,
+      fov: 50,
+    };
+  }
+  // desktop
+  return {
+    dijinScale: 1.15,
+    dijinPosition: [-1.10, -3.40, 0],
+    reactLogoScale: 0.9,
+    cameraZ: 26,
+    fov: 50,
+  };
 };
+
 
 export const workExperiences = [
   {

@@ -10,6 +10,7 @@ import Cube from '../components/Cube.jsx';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import HeroCamera from '../components/HeroCamera.jsx';
 import Button from '../components/Button.jsx';
+import Anchored from '../components/Anchored.jsx';
 
 const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -18,9 +19,12 @@ const Hero = () => {
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
+  const ANCHOR = { x: 0.47, y: 0.40, z: 0.0 }; 
+  const LOGO_Z_OFFSET = -0.8;
+
   return (
     <section className="min-h-screen w-full flex-col relative" id="home">
-      {/* asigură-te că textul e peste Canvas */}
+
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative z-10">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           Hi, I am Bogdan <span className="waving-hand">👋</span>
@@ -29,25 +33,22 @@ const Hero = () => {
       </div>
 
       <div className="w-full h-full absolute inset-0">
-        <Canvas
-          camera={{ position: [0, 0, 20], fov: 50, near: 0.1, far: 1000 }}
-          dpr={[1, 2]}
-        >
-          {/* Camera disponibilă încă din primul frame */}
-          <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-
+        <Canvas dpr={[1, 1.75]} camera={{ position: [0, 0, sizes.cameraZ], fov: sizes.fov }}>
+          <PerspectiveCamera makeDefault position={[0, 0, sizes.cameraZ]} fov={sizes.fov} />
           <Suspense fallback={<CanvasLoader />}>
-            {/* NU seta background aici ca să nu acoperi textul */}
-            <ReactLogo position={sizes.reactLogoPosition} />
-
-            <HeroCamera isMobile={isMobile}>
+            <HeroCamera isMobile={isMobile} camZ={sizes.cameraZ}>
               <HackerRoom
-                scale={sizes.dijinScale}
+                scale={sizes.dijinScale * 0.85}
                 position={sizes.dijinPosition}
                 rotation={[0, -Math.PI / 2, 0]}
               />
 
-              <Cube position={sizes.cubePosition} />
+              <Anchored x={ANCHOR.x} y={ANCHOR.y} z={ANCHOR.z}>
+                <Cube position={[0, 0, 0]} />
+                <group position={[0, 0, LOGO_Z_OFFSET]}>
+                  <ReactLogo scale={sizes.reactLogoScale} />
+                </group>
+              </Anchored>
 
               <ambientLight intensity={0.2} />
               <directionalLight position={[15, 5, 10]} intensity={3} />
