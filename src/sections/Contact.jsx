@@ -54,16 +54,15 @@ const Contact = () => {
             </h3>
             <div className='relative min-h-screen flex items-center justify-center flex-col'>
                 <img src='/assets/terminal.png' alt='terminal-bg' className='absolute inset-0 min-h-screen'/>
-                <div className='max-w-xl relative z-10 sm:px-10 px-5 mt-12'>
-                    <h3 className='head-text'>
-                        Let's talk
-                    </h3>
+                
+                    <div className='relative z-10 max-w-xl w-full mx-auto sm:px-10 px-5 py-10 sm:py-14'>
+                    <h3 className='head-text mt-6 sm:mt-0'>Let's talk</h3>
                     <p className='text-lg text-white-600 mt-3'>
                         Got an idea or need a hand with your project? Drop me a message—I'm always up for building something cool!
                     </p>
 
                     <form ref={formRef} onSubmit={handleSubmit}
-                    className='mt-12 flex flex-col space-y-7'>
+                    className='sm:mt-12 mt-9 flex flex-col sm:space-y-7 space-y-5'>
                         <label className='flex flex-col space-y-3'>
                             <span className='text-lg text-white-600'>
                                 Full Name
