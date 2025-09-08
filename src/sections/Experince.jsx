@@ -1,3 +1,4 @@
+// src/sections/Experince.jsx
 import React, { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
@@ -12,40 +13,44 @@ const Experince = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  const devScale = isSmall ? 2.2 : isMobile ? 2.6 : 3;
-  const devPosY = isSmall ? -2.2 : isMobile ? -2.6 : -3;
-
+  // mai mic pe mobil, ușor retras pe desktop
+  const devScale = isSmall ? 2.1 : isMobile ? 2.5 : 2.8;
+  const devPosY  = isSmall ? -2.0 : isMobile ? -2.4 : -2.8;
   const cameraProps = isSmall
-    ? { position: [0, 0.2, 7], fov: 45 }
+    ? { position: [0, 0.2, 7.2], fov: 45 }
     : isMobile
-    ? { position: [0, 0.3, 6.5], fov: 45 }
-    : { position: [0, 0.5, 6], fov: 40 };
+    ? { position: [0, 0.3, 6.8], fov: 45 }
+    : { position: [0, 0.5, 6.6], fov: 40 };
 
   return (
     <section className="c-space my-20">
       <div className="w-full text-white-600">
         <h3 className="head-text">My Experince</h3>
 
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12">
-          <div className="col-span-1 rounded-lg bg-black-200 border border-black-300 relative overflow-hidden h-[300px] sm:h-[360px] md:h-[420px] lg:h-[480px]">
-            <Canvas className="absolute inset-0" camera={cameraProps}>
-              <ambientLight intensity={3.5} />
-              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={2} />
-              <directionalLight position={[10, 10, 10]} intensity={3} />
-              <OrbitControls enableZoom={false} enablePan={false} maxPolarAngle={Math.PI / 2} />
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12 items-stretch">
+          {/* Col stânga: Canvas se întinde pe toată înălțimea rândului */}
+          <div className="col-span-1 rounded-lg bg-black-200 border border-black-300">
+            <div className="relative h-full min-h-[280px] sm:min-h-[320px]">
+              <Canvas className="absolute inset-0" camera={cameraProps}>
+                <ambientLight intensity={3.0} />
+                <spotLight position={[10, 10, 10]} angle={0.2} penumbra={1} />
+                <directionalLight position={[10, 10, 10]} intensity={2.5} />
+                <OrbitControls enableZoom={false} enablePan={false} maxPolarAngle={Math.PI / 2} />
 
-              <Suspense fallback={<CanvasLoader />}>
-                <Developer position={[0, devPosY, 0]} scale={devScale} animationName={animationName} />
-              </Suspense>
-            </Canvas>
+                <Suspense fallback={<CanvasLoader />}>
+                  <Developer position={[0, devPosY, 0]} scale={devScale} animationName={animationName} />
+                </Suspense>
+              </Canvas>
+            </div>
           </div>
 
+          {/* Col dreapta: lista de experiențe determină înălțimea rândului */}
           <div className="col-span-2 rounded-lg bg-black-200 border border-black-300">
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              {workExperiences.map(({ id, name, pos, duration, title, animation, icon }) => (
+              {workExperiences.map(({ id, name, pos, duration, title, animation, icon }, idx) => (
                 <div
                   key={id}
-                  className="grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5 group"
+                  className="grid grid-cols-[auto_1fr] items-start gap-5 transition-all duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5 group"
                   onClick={() => setAnimationName(animation.toLowerCase())}
                   onPointerOver={() => setAnimationName(animation.toLowerCase())}
                   onPointerOut={() => setAnimationName('idle')}
@@ -54,15 +59,14 @@ const Experince = () => {
                     <div className="rounded-3xl w-16 h-16 p-2 bg-black-600">
                       <img src={icon} alt="logo" className="w-full h-full" />
                     </div>
-                    <div className="flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden" />
+                    {/* linia verticală nu apare la ultimul item */}
+                    <div className={`flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 ${idx === workExperiences.length - 1 ? 'hidden' : ''}`} />
                   </div>
 
                   <div className="sm:p-5 px-2.5 py-5">
                     <p className="font-bold text-white-800">{name}</p>
-                    <p className="text-sm mb-5">
-                      {pos} — {duration}
-                    </p>
-                    <p className="group-hover:text-white transition ease-in-out duration-500">{title}</p>
+                    <p className="text-sm mb-5">{pos} — {duration}</p>
+                    <p className="group-hover:text-white transition duration-500">{title}</p>
                   </div>
                 </div>
               ))}
